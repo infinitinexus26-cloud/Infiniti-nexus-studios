@@ -5,152 +5,28 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Infiniti Nexus Studio</title>
 
-<link rel="stylesheet" href="style.css">
-<script defer src="main.js"></script>
+<link rel="stylesheet" href="assets/css/style.css">
+<script defer src="assets/js/main.js"></script>
 
 <style>
-/* botão destaque */
 .main-btn {
     margin-top:20px;
-    padding:15px 30px;
+    padding:12px 25px;
     border:1px solid #8b00ff;
     background:transparent;
     color:white;
-    // index.html
-
-<!DOCTYPE html><html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Infiniti Nexus Studio</title>
-<link rel="stylesheet" href="assets/css/style.css">
-<script defer src="assets/js/main.js"></script>
-</head><body><div id="loader">INITIALIZING NEXUS...</div>
-<canvas id="bg"></canvas><header class="nav">
-    <div>INFINITI NEXUS</div>
-    <nav>
-        <a href="#games">Games</a>
-        <a href="#devlog">Devlog</a>
-        <a href="#team">Team</a>
-        <a href="#contact">Contact</a>
-    </nav>
-</header><section class="hero">
-    <img src="assets/images/logo.png">
-    <h1>Infiniti Nexus Studio</h1>
-    <p>Creating infinite worlds through games</p>
-    <div>
-        <button class="btn">View Games</button>
-        <button class="btn">Join Community</button>
-    </div>
-</section><section id="games" class="section">
-    <h2>Games</h2>
-    <div class="grid">
-        <div class="card">
-            <h3>Project Nexus</h3>
-            <p>Immersive sci-fi experience</p>
-        </div>
-        <div class="card">
-            <h3>Project Void</h3>
-            <p>Dark exploration game</p>
-        </div>
-    </div>
-</section><section id="devlog" class="section">
-    <h2>Devlog</h2>
-    <div class="devlog">
-        <div class="post">New AI system implemented</div>
-        <div class="post">Graphics overhaul update</div>
-        <div class="post">Bug fixes and optimization</div>
-    </div>
-</section><section id="team" class="section">
-    <h2>Team</h2>
-    <div class="team">
-        <div class="member">Dev</div>
-        <div class="member">Designer</div>
-        <div class="member">Tester</div>
-    </div>
-</section><section id="contact" class="section">
-    <h2>Contact</h2>
-    <p>Email: contact@infinitinexus.dev</p>
-</section><footer>
-© 2026 Infiniti Nexus Studio
-</footer></body>
-</html>/* assets/css/style.css */ body { margin:0; font-family: Arial; background:#0a0a0a; color:white; cursor:none; }
-
-#loader { position:fixed; width:100%; height:100%; background:#000; display:flex; justify-content:center; align-items:center; z-index:9999; font-size:20px; color:#00f0ff; }
-
-#bg { position:fixed; top:0; left:0; width:100%; height:100%; z-index:-1; }
-
-.nav { position:fixed; width:100%; padding:20px; display:flex; justify-content:space-between; background:rgba(0,0,0,0.6); backdrop-filter:blur(10px); }
-
-.nav a { color:white; margin-left:20px; text-decoration:none; }
-
-.nav a:hover { color:#00f0ff; }
-
-.hero { height:100vh; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; }
-
-.hero img { width:180px; filter:drop-shadow(0 0 20px #00f0ff); }
-
-.hero h1 { color:#8b00ff; font-size:3rem; }
-
-.btn { margin-top:20px; padding:10px 20px; border:1px solid #8b00ff; background:transparent; color:white; cursor:pointer; }
-
-.btn:hover { border-color:#00f0ff; }
-
-.section { padding:100px 20px; text-align:center; }
-
-.section h2 { color:#00f0ff; }
-
-.grid { display:flex; gap:20px; justify-content:center; flex-wrap:wrap; }
-
-.card { width:250px; background:#111; padding:20px; border:1px solid #8b00ff; transition:0.3s; }
-
-.card:hover { transform:scale(1.05); border-color:#00f0ff; box-shadow:0 0 20px #00f0ff33; }
-
-.devlog { display:flex; flex-direction:column; gap:15px; max-width:600px; margin:auto; }
-
-.post { background:#111; padding:15px; border-left:3px solid #8b00ff; }
-
-.team { display:flex; gap:20px; justify-content:center; }
-
-.member { background:#111; padding:20px; border:1px solid #00f0ff; }
-
-footer { padding:20px; text-align:center; opacity:0.5; }
-
-/* custom cursor */ .cursor { position:fixed; width:10px; height:10px; background:#00f0ff; border-radius:50%; pointer-events:none; box-shadow:0 0 10px #00f0ff; z-index:999; }
-
-// assets/js/main.js
-
-// loader window.addEventListener("load", () => { setTimeout(() => { document.getElementById("loader").style.display = "none"; }, 1000); });
-
-// scroll animation const sections = document.querySelectorAll(".section"); window.addEventListener("scroll", () => { sections.forEach(sec => { const top = sec.getBoundingClientRect().top; if(top < window.innerHeight - 100){ sec.style.opacity = 1; sec.style.transform = "translateY(0)"; } }); });
-
-sections.forEach(sec => { sec.style.opacity = 0; sec.style.transform = "translateY(50px)"; sec.style.transition = "0.6s"; });
-
-// particles background const canvas = document.getElementById("bg"); const ctx = canvas.getContext("2d"); canvas.width = window.innerWidth; canvas.height = window.innerHeight;
-
-let particles = []; for(let i=0;i<100;i++){ particles.push({ x: Math.random()*canvas.width, y: Math.random()*canvas.height, vx: Math.random()-0.5, vy: Math.random()-0.5 }); }
-
-function animate(){ ctx.clearRect(0,0,canvas.width,canvas.height); particles.forEach(p=>{ p.x+=p.vx; p.y+=p.vy; ctx.fillStyle = "#00f0ff"; ctx.fillRect(p.x,p.y,2,2); }); requestAnimationFrame(animate); } animate();
-
-// custom cursor const cursor = document.createElement("div"); cursor.classList.add("cursor"); document.body.appendChild(cursor);
-
-document.addEventListener("mousemove", e => { cursor.style.left = e.clientX + "px"; cursor.style.top = e.clientY + "px"; });;
-    font-size:1rem;
+    cursor:pointer;
     transition:0.3s;
 }
 
 .main-btn:hover {
     border-color:#00f0ff;
-    box-shadow:0 0 15px #00f0ff;
 }
 </style>
 
 </head>
 
 <body>
-
-<div id="loader">INITIALIZING NEXUS...</div>
-<canvas id="bg"></canvas>
 
 <header class="nav">
     <div>INFINITI NEXUS</div>
@@ -163,11 +39,11 @@ document.addEventListener("mousemove", e => { cursor.style.left = e.clientX + "p
 </header>
 
 <section class="hero">
-    <img src="logo.png">
+    <img src="assets/images/logo.png">
     <h1>Infiniti Nexus Studio</h1>
     <p>Creating infinite worlds through games</p>
 
-    <!-- BOTÃO PRINCIPAL -->
+    <!-- botão simples -->
     <button class="main-btn" onclick="goToGames()">View All Games</button>
 </section>
 
@@ -190,8 +66,8 @@ document.addEventListener("mousemove", e => { cursor.style.left = e.clientX + "p
     <h2>Devlog</h2>
     <div class="devlog">
         <div class="post">New AI system implemented</div>
-        <div class="post">Graphics overhaul update</div>
-        <div class="post">Bug fixes and optimization</div>
+        <div class="post">Graphics update</div>
+        <div class="post">Bug fixes</div>
     </div>
 </section>
 
