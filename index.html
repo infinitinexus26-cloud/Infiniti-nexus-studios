@@ -1,64 +1,109 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Infiniti Nexus Studio</title>
+
 <link rel="stylesheet" href="style.css">
 <script defer src="main.js"></script>
+
+<style>
+/* botão destaque */
+.main-btn {
+    margin-top:20px;
+    padding:15px 30px;
+    border:1px solid #8b00ff;
+    background:transparent;
+    color:white;
+    cursor:pointer;
+    font-size:1rem;
+    transition:0.3s;
+}
+
+.main-btn:hover {
+    border-color:#00f0ff;
+    box-shadow:0 0 15px #00f0ff;
+}
+</style>
+
 </head>
+
 <body>
 
-<header class="navbar">
-    <div class="logo">INFINITI NEXUS</div>
+<div id="loader">INITIALIZING NEXUS...</div>
+<canvas id="bg"></canvas>
+
+<header class="nav">
+    <div>INFINITI NEXUS</div>
     <nav>
-        <a href="#games">Jogos</a>
-        <a href="#about">Sobre</a>
-        <a href="#team">Equipe</a>
-        <a href="#contact">Contato</a>
+        <a href="#games">Games</a>
+        <a href="#devlog">Devlog</a>
+        <a href="#team">Team</a>
+        <a href="#contact">Contact</a>
     </nav>
 </header>
 
 <section class="hero">
-    <div class="overlay"></div>
-    <img src="logo.png" class="hero-logo">
+    <img src="logo.png">
     <h1>Infiniti Nexus Studio</h1>
-    <p>Criando mundos infinitos através dos jogos</p>
+    <p>Creating infinite worlds through games</p>
+
+    <!-- BOTÃO PRINCIPAL -->
+    <button class="main-btn" onclick="goToGames()">View All Games</button>
 </section>
 
 <section id="games" class="section">
-    <h2>Nossos Jogos</h2>
+    <h2>Games</h2>
     <div class="grid">
-        <div class="card">
-            <h3>Projeto X</h3>
-            <p>Em desenvolvimento</p>
+        <div class="card" onclick="openGame('nexus')">
+            <h3>Project Nexus</h3>
+            <p>Immersive sci-fi experience</p>
         </div>
-        <div class="card">
-            <h3>Projeto Y</h3>
-            <p>Em desenvolvimento</p>
+
+        <div class="card" onclick="openGame('void')">
+            <h3>Project Void</h3>
+            <p>Dark exploration game</p>
         </div>
     </div>
 </section>
 
-<section id="about" class="section">
-    <h2>Sobre</h2>
-    <p>Desenvolvimento de jogos com foco em performance, inovação e experiências imersivas.</p>
+<section id="devlog" class="section">
+    <h2>Devlog</h2>
+    <div class="devlog">
+        <div class="post">New AI system implemented</div>
+        <div class="post">Graphics overhaul update</div>
+        <div class="post">Bug fixes and optimization</div>
+    </div>
 </section>
 
 <section id="team" class="section">
-    <h2>Equipe</h2>
-    <p>Construindo o futuro dos games.</p>
+    <h2>Team</h2>
+    <div class="team">
+        <div class="member">Dev</div>
+        <div class="member">Designer</div>
+        <div class="member">Tester</div>
+    </div>
 </section>
 
 <section id="contact" class="section">
-    <h2>Contato</h2>
-    <p>Email: contato@infinitinexus.dev</p>
-    <p>Discord: Em breve</p>
+    <h2>Contact</h2>
+    <p>Email: contact@infinitinexus.dev</p>
 </section>
 
 <footer>
-    <p>© 2026 Infiniti Nexus Studio</p>
+© 2026 Infiniti Nexus Studio
 </footer>
+
+<script>
+function goToGames(){
+    window.location.href = "games.html";
+}
+
+function openGame(id){
+    window.location.href = "game.html?game=" + id;
+}
+</script>
 
 </body>
 </html>
